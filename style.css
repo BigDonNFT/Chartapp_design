@@ -1,6 +1,6 @@
 * {
     padding: 0;
-    margin: auto;
+    margin: 0;
     font-size: 1rem;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
@@ -44,15 +44,16 @@
 
 body {
     background-color: whitesmoke;
-    margin-left: var(--space-s);
-    margin-right: var(--space-s);
-    margin-right: 10%;
-    margin-left: 10%;
-    margin-top: 8%;
-    margin-bottom: 8%;
-    height:auto;
+    margin: 0;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     
 }
+
 
 
 .side-design1{
@@ -67,12 +68,13 @@ body {
     background: linear-gradient(to right, hsl(264, 100%, 61%), hsl(293, 100%, 63%) ) ;
 }
 
+
 @media screen and (min-width: 376px) {
   .side-design2{
     position: absolute;
-    top: 50%;
+    top: 60%;
     right: 0;
-    height: 450px;
+    height: 600px;
     width: 160px;
     background-color: red;
     z-index: 0;
@@ -87,15 +89,18 @@ body {
 .mobile {
     position: relative;
     width: 250px;
-    height: 478px;
+    min-height: 477px;
     border: 5px solid white;
     border-radius: var(--space-m);
     box-shadow: 3px 6px 15px rgb(229, 229, 229);
     background-color: whitesmoke;
+    flex-shrink: 0;
+    margin: auto;
 }
 
+
 .header {
-    height: 80px;
+    min-height: 70px;
     border-radius: 25px 25px 3px 3px;
     background: linear-gradient(to right, hsl(264, 100%, 61%), hsl(293, 100%, 63%) ) ;
    
@@ -108,6 +113,7 @@ body {
     align-items: center;
     gap: 5px;
     margin: 8px 0px 0px 10px;
+    flex-wrap: wrap;
     img {
         width: 30px;
         border-radius: 50px;
@@ -131,7 +137,7 @@ body {
 
 .topwhite {
     width: 150px;
-    height: 25px;
+    height: 20px;
     background-color: var(--clr-White);
     border-radius: 0 0 20px 20px;
     margin: auto;
@@ -149,8 +155,9 @@ body {
 }
 
 .chart-1 {
+    position: relative;
     margin: 8px;
-    max-width: 120px;
+    width: 120px;
     background-color: rgb(237, 230, 239);
     border-radius: var(--space-2xs);
     padding: 7px 0px 7px 9px;
@@ -165,8 +172,9 @@ body {
 }
 
 .chart-2 {
+    position: relative;
     margin: 8px;
-    max-width: 150px;
+    width: 150px;
     background-color: rgb(237, 230, 239);
     border-radius: var(--space-2xs);
     padding: 7px 11px 7px 9px;
@@ -178,27 +186,30 @@ body {
 }
 
 .dog-container {
-    display: inline-flex;
-    gap: 4px;
-    margin-left: 85px;
+    display: flex;
+    justify-content: flex-end;
     cursor: pointer;
-
+   
     img {
         width: 50px;
         border-radius: 10px;
+        margin-right: 8px;
+
+        
     }
 }
 
 .chart-3 {
     margin-right: 8px;
     margin-top: 5px;
-    width: 140px;
+    width: 110px;
     background-color: var(--clr-White);
     border-radius: var(--space-2xs);
     padding: 7px 1px 7px 9px;
     justify-self: right;
     box-shadow: 1px 1px 5px rgb(210, 210, 210);
     opacity: 0.7;
+    text-wrap: balance;
     p {
         font-size: var(--space-2xs);
     }
@@ -213,6 +224,7 @@ body {
     justify-self: right;
     box-shadow: 1px 1px 5px rgb(210, 210, 210);
     opacity: 0.7;
+    text-wrap: balance;
     p {
         font-size: var(--space-2xs);
     }
@@ -224,6 +236,7 @@ body {
     background-color: rgb(237, 230, 239);
     border-radius: var(--space-2xs);
     padding: 7px 11px 7px 9px;
+    text-wrap: balance;
    
     p {
         font-size: var(--space-2xs);
@@ -236,7 +249,7 @@ body {
     display: flex;
     align-items: center;
     margin-left: 8px;
-    margin-top: 5px;
+    margin-top: 8px;
     width: 150px;
     height: 20px;
     background: linear-gradient(to right, hsl(264, 100%, 61%), hsl(293, 100%, 63%) ) ;
@@ -270,25 +283,26 @@ body {
 }
 
 .form {
-    display: block;
-    margin-top: 8px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+    margin: 10px;
     width: 230px;
-    height: 30px ;
+    height: 29px ;
     background-color: white;
     border-radius: 30px;
    
 }
 
 input {
-    display: block;
-    margin-left: 10px;
     width: 180px;
-    height: 25px;
     border-radius: 30px;
-    border: 2px solid white;
-    padding: 1px;
+    border: 0px solid white;
+    padding-bottom: 2px;
+    padding-left: 6px;
     font-size: 10px;
-   
+       
 }
 
 input:focus {
@@ -296,11 +310,15 @@ input:focus {
    
 }
 
+button {
+    border-style: hidden;
+    background: transparent;
+}
+
 .fa-circle-chevron-right {
+    scale: 130%;
     position: relative;
-    bottom: 27px;
-    left: 204px;
-    scale: 140%;
+    top: 3px;
 }
 
 .fa-circle-chevron-right:hover {
@@ -326,10 +344,14 @@ input:focus {
 }
 
 
-@media screen and (min-width: 450px) {
+@media screen and (min-width: 870px) {
     .flex {
     display: flex;
-   gap: 15px;
+   gap: 17px;
+   text-wrap: balance;
+   margin: 5%;
+   height: 100vh;
+   
 }
 
 .booking {
